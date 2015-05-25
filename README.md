@@ -32,9 +32,10 @@ Fixed erroneous printouts of native library mis-match
 
 Checkout the repository.
 
-$cd nrjavaserial/nrjavaserial
-
-$ant
+```
+$ cd nrjavaserial/nrjavaserial
+$ ant
+```
 
 The ready to deploy .jar file will be found in the target/ directory. 
 
@@ -42,22 +43,23 @@ The ready to deploy .jar file will be found in the target/ directory.
 
 Native code is built using the Makefile found in nrjavaserial/nrjavaserial . After the native code is built, the .jar is rebuilt. 
 
-$cd nrjavaserial/nrjavaserial/
+```
+$ cd nrjavaserial/nrjavaserial/ 
 
-$make windows #This will build the windows binaries. This will attempt to build the 64 and 32 bit binaries. 
+$ make windows #This will build the windows binaries. This will attempt to build the 64 and 32 bit binaries. 
 
-$make wine #This will build the windows binaries on Linux
+$ make wine #This will build the windows binaries on Linux
 
-$make linux #This will attempt to build both the 32 and 64 bit Linux binaries
+$ make linux #This will attempt to build both the 32 and 64 bit Linux binaries
 
-$make linux32 or $make linux64 #This will attempt to build 32 or 64 bit Linux binaries
+$ make linux32 or $make linux64 #This will attempt to build 32 or 64 bit Linux binaries
 
-$make arm #This will attempt to build the binaries for all the supported ARM flavors
+$ make arm #This will attempt to build the binaries for all the supported ARM flavors
 
-$make ppc #This will attempt to build the PPC binaries. 
+$ make ppc #This will attempt to build the PPC binaries. 
 
-$make osx #This will attempt to build the OSX binaries. 
-
+$ make osx #This will attempt to build the OSX binaries. 
+```
 
 #Windows Builds
 
@@ -67,6 +69,7 @@ Download mingw64: http://tdm-gcc.tdragon.net/
 
 NRSerialPort serial = new NRSerialPort("COM3", 115200);                          
 
+```java
 serial.connect();
 
 DataInputStream ins = new DataInputStream(serial.getInputStream());
@@ -78,5 +81,4 @@ byte b = ins.read();
 outs.write(b);
 
 serial.disconnect(); 
-
-
+```
